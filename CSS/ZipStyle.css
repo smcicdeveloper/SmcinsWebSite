@@ -1,0 +1,57 @@
+﻿body 
+{
+	background: url("../images/bckground.jpg") repeat;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+.headerDiv
+{
+	background: #2E8B57;
+	margin: 0;
+	height: 80px;
+	text-align:left;
+}
+.title
+{
+	color: #F7FAFA;
+	padding: 20px 0 0 10px;
+}
+.wrapperDiv
+{
+	max-width: 860px;
+	border: 1px solid #D9D4D6;
+	margin: auto;
+	margin-top: 40px;
+	background-color: #E1E3E3;
+	padding: 0 8px 0 8px;
+	border-radius: 6px;
+}
+.contentDiv
+{
+	height: 500px;
+}
+.gridWrapper
+{
+	height: 490px;
+	background-color: White;
+	border:1px black solid;
+}
+.gridContainer
+{
+	overflow: auto;
+}
+
+
+.searchBar table
+{
+    display:inline-block;
+    margin-left:5px;
+}
+
+.searchBar table td
+{
+    padding: 2px 12px 5px 0;
+}

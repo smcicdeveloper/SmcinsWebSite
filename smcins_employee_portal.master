@@ -1,0 +1,541 @@
+﻿<%@ Master Language="VB" CodeFile="smcins_employee_portal.master.vb" Inherits="employee_portal" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+
+        <style type="text/css">
+        
+        h1, h2, h3, h4, p, ul, ol, body, html {
+	        margin: 0px;
+	        padding: 0px;
+        }
+        a img { 
+	        border: none;
+        }
+        body {
+	     background:#E6E6E6 url('../CSS/Images/page_bg_2.png') repeat-y center top;
+	     /*font: 75% Verdana, Arial, Helvetica, sans-serif;*/
+        }  
+        
+        table td {border:0px;margin:0px;padding:0px;}     
+        
+        #wrapper {
+           width:934px;
+           height:auto;
+           margin-right:auto;
+           margin-left:auto;
+           border-right: 2px solid #000000;
+           border-left: 2px solid #000000;
+           background-color:#ffffff;
+        }
+        
+        #wrapper hr {
+           border:.05em dotted silver;
+           margin:0 0 10px 0;
+        }
+        
+        #wrapper h3 {
+            margin-left:5px;
+            margin-top:5px;
+        }
+        
+        #main {
+          padding-left:10px;
+          background-color:White;
+          display:inline;
+        }
+             
+/****** LOGO STYLES ***************************/
+
+        #logo {
+            height:123px;
+            position:relative;
+            /*background-image: url('../CSS/Images/agent_logo.png');
+            background-repeat: no-repeat;
+            background-position: left;*/
+        }
+        #logo p {
+            margin:0;
+        }
+        #logo ul {
+	        margin: 0px;
+	        padding: 0px;
+	        list-style: none;
+        }
+        #logo li {
+	        display: inline;
+	        margin-right: 3px;
+	        padding-bottom: .5em; /* to display bottom border on links in IE */
+        }
+        #sitetools {
+            text-align:right;
+        }
+        #sitetools li a {
+	        font-size: 1em;
+	        text-decoration: none;
+	        color: #10214e;
+	        line-height: 2em;
+	        background: #DCE5FF;
+	        padding: 5px;
+	        height: 2em;
+	        border: 1px solid #4D69B0;
+	        font-weight: bold;
+        }
+        #sitetools li a:hover {
+	        color:#DCE5FF;
+	        background-color:#10214e;
+        }
+        
+  /*****Top Bar*************************************/   
+             
+        #top_bar {
+            margin-bottom:1.75em;
+            position:relative;
+            color:#fff;
+            padding:1px 0 .5em 0;
+            border: 1px solid black;
+            background-color:#046fb5;  
+            font-family: Arial, Sans-Serif;
+            font-size:12px;                            
+        }
+        
+        #top_text {
+            margin:0;
+            padding:0.5em 1em;
+        }
+        
+        #top_text li {
+            display:inline;
+            margin-right:0.2em;
+            padding-right:0.2em;
+            font-weight:bold;
+        }
+        
+        #logout {
+            margin-top: -1.66em;
+            padding: 0 2em 0 0; 
+            text-align:right; 
+            line-height:1; 
+        }
+        
+        .button {
+            color:White;
+        }
+        
+        .button:hover {
+            color:#DCE5FF;
+        }
+  /******Links***************************************/     
+  
+  .links {
+       margin:0;
+       padding:0.5em 1em;     
+       }
+       
+  .links ul {
+     list-style:disc;
+     }     
+  
+  .links li {
+      display:block;
+      margin-right:0.2em;
+      padding-right:0.2em;
+      padding-bottom:0.1em;   
+      } 
+      
+  .links a {
+      text-decoration:none;
+      font: 70% tahoma, Arial, Helvetica, sans-serif;
+  }    
+  
+  .links a:hover {
+      text-decoration:underline;
+  }
+       
+  /******Tabs***************************************/
+
+        .tab {
+            padding:2px 25px;
+            border:solid 1px #a9c2f6;
+            cursor:pointer;
+        }
+
+        .unselectedTab {
+            background-color:#046fb5;
+            color:#ffffff;
+            font-weight:bold;
+            font: 75% tahoma, Arial, Helvetica, sans-serif;
+        }
+
+        .selectedTab {
+            background-color:#a9c2f6;
+            color:#063e72;
+            border-bottom:solid 1px white;
+            font: 75% tahoma, Arial, Helvetica, sans-serif;
+        }
+
+        .tabs {
+            position:relative;
+            top:3px;
+            left:15px;
+        }
+
+        .tabContent {
+            border:Solid 1px #a9c2f6;
+            background-color:#ffffff;
+            padding:10px;   
+            margin-left:10px;       
+            width:720px; /*control the width of the tab box*/
+        }
+
+        .tabContent p {
+            font-size:12px;
+            padding:5px;
+            color:#626364;
+        }
+
+         .tools {
+            margin-top:10px;
+            margin-left:20px; /*move the tab box to the right*/
+            padding-left:15px;
+            color:#4b5358;
+        }
+    
+        .tools p {
+            margin-top:15px;
+            margin-bottom:15px;
+            width:500px;
+            letter-spacing:.1em;
+            line-height:125%;
+            font: 70% tahoma, Arial, Helvetica, sans-serif;
+        }
+    
+        .tools h3 {
+            margin-bottom:4px;
+            color:#046fb5;
+            font-weight:bold;
+            font: 100% tahoma, Arial, Helvetica, sans-serif;            
+        }
+        
+        .tools h2 {
+            font: 100% tahoma, Arial, Helvetica, sans-serif;
+            color:#045f9c;
+            /*color:#046fb5;*/
+        }
+    
+        .tools fieldset {
+            border:0px;
+            margin-bottom:15px;
+        }
+               
+        .tools table td {
+            padding:4px 25px 2px 2px;
+            caption-side:top;
+            vertical-align:text-top
+        }
+        
+        .tools table li, .tools fieldset li {
+            padding:3px;
+            font: 100% tahoma, Arial, Helvetica, sans-serif;
+         }
+         
+         .tools table a, .tools fieldset a {
+             text-decoration:none;
+             color:#4b5358;
+         }
+    
+        .tools table a:hover, .tools fieldset a:hover {
+             text-decoration:underline;
+             color:#046fb5;
+         }
+     
+        .tools table ul, .tools fieldset ul {
+             font-size:11px;
+             list-style:disc;
+             margin-left:18px;
+             padding-bottom:3px;
+         }
+     
+         .tools a {
+            text-decoration:none;
+            color:Blue;
+         } 
+     
+        .tools a:hover {
+             text-decoration:underline;
+             color:Blue;
+         }
+           
+        .tools ol {
+            margin:20px 15px 5px 0;
+            padding:0;
+        }
+    
+        .tools ol li {
+            display: inline;
+            list-style-type:none;
+        }
+        
+        .tools_hyperlink {
+            font: 75% tahoma, Arial, Helvetica, sans-serif;
+            padding-left:5px;
+        }
+        
+        .tools_gridview {
+           font: 70% tahoma, Arial, Helvetica, sans-serif;
+        }
+        .tools hr {
+           margin-top:4px;
+           margin-bottom:4px;
+         }
+        
+        #chart_box {
+            border:0px solid black; 
+            clear:both;
+        }
+        #chart_box label {
+            margin:0px; 
+            font-weight:bold;
+        }
+        
+        #chart_box ol {
+            background-color:#e2e2e2;
+            border:1px dotted #444444;
+            width:385px;
+            height:25px;
+            padding:8px;
+            margin-top:25px;
+         }
+         
+        #chart_box ol li {
+            display: inline;
+            list-style-type:none;
+            margin-right:25px;
+         }
+         
+         #chart_box li {
+            float:left;
+	        width:120px;
+	        font: 90% tahoma, Arial, Helvetica, sans-serif;
+	     }
+	    #chart_box hr {
+           margin-top:4px;
+           margin-bottom:4px;
+         }
+	     
+	     .selectagentdropdownstyle {
+	         font: 90% tahoma, Arial, Helvetica, sans-serif;
+	         width:125px;
+	     }
+	     
+	     #center-box {margin-left:50px;}
+                
+        .left_side  {
+            width:350px;
+        }
+           
+        #right_side {
+           border:1px solid black;        
+           width:300px;
+           text-align:left;
+           overflow:auto;
+        }
+        
+        #right_side p {
+           font-size:11px;
+           word-spacing:2px;
+           padding:3px;
+           margin-top:3px;
+        }
+        
+      /* Bottom Bar */
+      
+       #bottom_bar {
+           clear: both;
+           background-color: White;
+           padding:10px;
+           text-align:left;
+           height:305px; 
+      }
+      
+      #bottom_bar fieldset {
+            border:Solid 1px #a9c2f6;
+            background-color:#f2f2f2;
+            padding:10px;  
+            margin-top:10px;        
+            width:800px; /*control the width of the fieldset*/
+      }
+      
+      #bottom_bar h3 {
+        margin-bottom:4px;
+        color:#046fb5;
+        font-weight:bold;
+        font: 100% tahoma, Arial, Helvetica, sans-serif;
+}
+      #bottom_bar ul {
+         list-style:disc;
+         margin-left:18px;
+         padding-bottom:3px;
+         font: 70% tahoma, Arial, Helvetica, sans-serif;
+}
+      #bottom_bar a {
+            text-decoration:none;
+            color:Black;
+         } 
+     
+      #bottom_bar a:hover {
+             text-decoration:underline;
+             color:Blue;
+         }
+            
+      /*****FIND EMPLOYEE***************************************/
+        #ep_top {
+         margin-top:12px;
+         margin-bottom:10px;
+         /*margin-left:11%;*/
+        }
+
+        #ep_top fieldset {
+            /*width:650px;*/
+            height:auto;
+            padding:8px;
+            border:0px;
+            margin-bottom:30px;
+        }
+        
+        #ep_top fieldset legend {
+            font-weight:bold;
+        }
+
+        #ep_top table   {
+            margin-top:10px;
+        }
+        
+        #ep_top table tr {
+            height:30px;
+        }
+
+        #ep_top fieldset label {
+       
+        }
+        
+        #ep_top span {
+            padding:0px;
+        }
+        
+        .div_datalist {padding:5px;}
+        
+       .image-left {
+	    float: left;
+	    margin-right: 10px;
+	    margin-bottom: 10px;
+	    overflow:hidden;
+        }
+        
+        /*******FOOTER****************************************/
+        #_footer {
+         clear: both;
+         background-color: #046fb5;
+         border-right: 2px solid #000000;
+         border-left: 2px solid #000000;
+         text-align: center;
+         border-bottom:.07em solid #dfdfdf;
+         width:934px;
+         margin-right:auto;
+         margin-left:auto;
+}
+       #_footer h5 {
+        margin:0;
+        font: 70% tahoma, Arial, Helvetica, sans-serif;
+        color:#ffffff;
+        padding:4px;
+} 
+
+      /***PRODUCTION SUMMARY*********************************/
+        #go_left {
+        position:relative;
+        float:left;
+        width:390px;
+        height:325px;
+        margin-left:10px;
+        margin-right:10px;
+        padding:0px;
+        border: 0px dotted #045f9c;
+       
+        }
+        #go_right {
+         position:relative;
+         float:left;
+         width:390px;
+         height:325px;
+         margin-right:10px;
+         margin-left:10px;
+         clear:both;
+        } 
+        .clear {clear:both;}
+    </style>
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+<form id="form1" runat="server">
+    <div id="wrapper">
+      <div id="logo">
+          <asp:Image ID="Image1" runat="server" ImageUrl="~/CSS/Images/Employee-logo.png" />
+      </div>
+
+  <div id="top_bar">
+    <asp:FormView 
+         ID="FormView1" 
+         runat="server" 
+         DataSourceID="OdsAllPortal">
+        <ItemTemplate>         
+                <ul id="top_text">
+                   <li><asp:Label ID="Label1" runat="server" Text="Welcome," />&nbsp;<asp:Label ID="FullnameLabel" runat="server" Text='<%# Bind("Fullname") %>' /></li>
+                   <li>-</li>
+                    <li><asp:Label ID="Label2" runat="server" Text="Employee Number: " />&nbsp;<asp:Label ID="lblEmployeeNum" runat="server" Text='<%# Bind("Employeenumber") %>' /></li>
+                </ul>
+        </ItemTemplate>
+    </asp:FormView>
+    <p id="logout">
+      <asp:LoginStatus ID="LoginStatus1" CssClass="button" runat="server" LogoutAction="Redirect" LogoutPageUrl="index.html" Font-Underline="False" Font-Bold="False" Font-Italic="False" />
+    </p>
+  </div>
+
+    <div id="main">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+       
+        </asp:ContentPlaceHolder>
+    </div>
+    <div id="bottom_bar">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+
+   </div>
+
+    <div id="_footer">
+         <h5>Copyright&#169; 2017 Southern Mutual Church Insurance Company</h5>
+         <h5>P.O. Box 9346 - 201 Greenlawn Drive - Columbia, SC 29290-0346</h5>
+         <h5>(803)776-9365 - Toll Free (800)922-5332 - Fax (803)776-4260</h5>   
+   </div>
+      <asp:ObjectDataSource 
+        ID="OdsAllPortal" 
+        runat="server" 
+        SelectMethod="GetEmployeeName" 
+        TypeName="smci.SqlAccessLayer.MySqlCode">
+          <SelectParameters>
+              <asp:SessionParameter 
+                   Name="UserNameIs" 
+                   SessionField="UserNameIs" 
+                   Type="String" />
+          </SelectParameters>
+</asp:ObjectDataSource>
+
+    </form>
+</body>
+</html>

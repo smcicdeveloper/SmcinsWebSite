@@ -1,0 +1,211 @@
+﻿<%@ Master Language="VB" CodeFile="smcins_portal.master.vb" Inherits="smcins_portal" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+
+    <script type="text/javascript" >
+        history.forward(1);
+    </script>
+
+    <link href="CSS/main.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+     /* The micro clearfix hack
+        -----------------------------------------------------------*/
+        #content {   
+            float:right;
+            width:65%;
+        }
+        
+        .clearfix:before, .clearfix:after {
+            content: "";
+            display:table;
+        }
+
+        .clearfix:after {
+            clear:both;
+        }
+
+        .clearfix {
+            zoom:1;
+        }
+    
+    </style>
+
+<script type="text/javascript">
+    var objNavMenu = null;
+    var prevObjNavMenu = null;
+    var prevObjDropMenu = null;
+    var numDropMenu = 1;
+
+    ////// link styles
+    var bgLinkColor = '#003a5e';
+    var bgLinkHover = '#003a5e';
+    var bgLinkActive = '#003a5e';
+    var linkColor = '#ffffff';
+    var linkHover = '#759cd2';
+    var linkActive = '#ffffff';
+
+    var isIE = null;
+    if (navigator.appName.indexOf('Microsoft Internet Explorer') != -1) isIE = 1;
+
+    function initDropMenu() {
+        document.onclick = hideDropMenu;
+        for (i = 1; i <= numDropMenu; i++) {
+            menuName = 'dropMenu' + i;
+            navName = 'navMenu' + i;
+            objDropMenu = document.getElementById(menuName);
+            objNavMenu = document.getElementById(navName);
+            objDropMenu.style.visibility = 'hidden';
+            objNavMenu.onmouseover = showDropMenu;
+            objNavMenu.onmouseout = menuOut;
+            objNavMenu.onclick = showDropMenu;
+        }
+        objNavMenu = null;
+        return;
+    }
+
+
+    function menuOut(e) {
+        document.onclick = hideDropMenu;
+        outObjNavMenu = document.getElementById(this.id);
+        if (outObjNavMenu != objNavMenu) {
+            outObjNavMenu.style.color = linkColor;
+            outObjNavMenu.style.backgroundColor = bgLinkColor;
+        }
+    }
+
+    function showDropMenu(e) {
+        menuName = 'drop' + this.id.substring(3, this.id.length);
+        objDropMenu = document.getElementById(menuName);
+        if (prevObjDropMenu == objDropMenu) {
+            hideDropMenu();
+            return;
+        }
+        if (prevObjDropMenu != null) hideDropMenu();
+        objNavMenu = document.getElementById(this.id);
+        if ((prevObjNavMenu != objNavMenu) || (prevObjDropMenu == null)) {
+            objNavMenu.style.color = linkActive;
+            objNavMenu.style.backgroundColor = bgLinkActive;
+        }
+
+        if (objDropMenu) {
+            xPos = objNavMenu.offsetParent.offsetLeft + objNavMenu.offsetLeft;
+            yPos = objNavMenu.offsetParent.offsetTop + objNavMenu.offsetParent.offsetHeight;
+            if (isIE) {
+                yPos -= 1;
+                xPos -= 6;
+            }
+            objDropMenu.style.left = xPos + 'px';
+            objDropMenu.style.top = yPos + 'px';
+            objDropMenu.style.visibility = 'visible';
+            prevObjDropMenu = objDropMenu;
+            prevObjNavMenu = objNavMenu;
+        }
+
+    }
+
+    function hideDropMenu() {
+        document.onclick = null;
+        if (prevObjDropMenu) {
+            prevObjDropMenu.style.visibility = 'hidden';
+            prevObjDropMenu = null;
+            prevObjNavMenu.style.color = linkColor;
+            prevObjNavMenu.style.backgroundColor = bgLinkColor;
+        }
+        objNavMenu = null;
+    }
+
+    window.onload = initDropMenu;
+
+		</script>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+    <div id="masterbox">
+    <div id="banner">
+	
+	<img alt="SMC Banner" width="992" height="130" src="../CSS/Images/top-banner-m.png"/>
+</div>
+
+    <asp:FormView 
+    ID="FormView1" 
+    runat="server" 
+    DataSourceID="OdsAllPortal" 
+    CssClass="top_nav_formview">
+    <ItemTemplate>
+ <div id="menuBar">
+     <div id="Div1" class="menuHeader">
+       <asp:Label ID="Label2" runat="server" Text="Welcome" />&nbsp;<asp:Label ID="Label3" runat="server" Text='<%# Bind("Fullname") %>' />
+     </div>
+     <%--<div id="navMenu0" class="menuHeader"><a href="CandleSafetyIn/CandleSafetyEntry.aspx" target="_blank" style="color:White;">Candle Safety</a></div>--%>
+     <div id="navMenu1" class="menuHeader">My Account</div>     
+     <div id="navMenu2" class="menuHeader">
+     <asp:LoginStatus ID="LoginStatus2" runat="server" LogoutAction="Redirect" LogoutPageUrl="~/index.html" />
+     </div>
+     </div>
+<%--     <div id="dropMenu1" class="menuDrop">
+     </div>--%>
+     <div id="dropMenu1" class="menuDrop">
+        <a href="policyholder_tools.aspx" onfocus="if (this.blur) this.blur();">Tools</a>
+        <a href="address_change_request.aspx" onfocus="if (this.blur) this.blur();">Address Change Request</a>
+        <a href="change_password.aspx" onfocus="if (this.blur) this.blur();">Change Password</a>
+        <a href="update_profile.aspx" onfocus="if (this.blur) this.blur();">Update Profile</a>
+     </div>
+<%--     <div id="dropMenu3" class="menuDrop">
+     </div>--%>
+
+ 
+    </ItemTemplate>
+    </asp:FormView>
+
+<div id="portal_content">
+<br /><br />
+      <label>Customer Number:
+        <asp:Label 
+             ID="lblCust" 
+             runat="server" 
+             Text="Label" />
+        </label>
+     <br /><br />
+   <div id="address_container">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+   </div>
+</div>
+
+   <div id="portal_page_content" class="clearfix">
+      <div id="content">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder2" runat="server">
+        </asp:ContentPlaceHolder>
+      </div>
+  </div>
+<div class="bottom_content">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+    </asp:ContentPlaceHolder>
+</div>
+     <div id="portal_footer">
+         <h5>Copyright&#169; 2017 Southern Mutual Church Insurance Company</h5>
+         <h5>P.O. Box 9346 - 201 Greenlawn Drive - Columbia, SC 29290-0346</h5>
+         <h5>(803)776-9365 - Toll Free (800)922-5332 - Fax (803)776-4260</h5>   
+     </div>
+
+</div>
+<asp:ObjectDataSource 
+        ID="OdsAllPortal" 
+        runat="server" 
+        SelectMethod="GetUserProfile" 
+        TypeName="smci.SqlAccessLayer.MySqlCode">
+    <SelectParameters>
+      <asp:SessionParameter 
+        Name="UserNameIs" 
+        SessionField="UserNameIs" 
+        Type="String" />
+    </SelectParameters>
+</asp:ObjectDataSource>
+    </form>
+</body>
+</html>

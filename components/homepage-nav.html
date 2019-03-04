@@ -1,0 +1,61 @@
+<!--=====================================--> 
+<!--============ Navigation =============--> 
+<!--=====================================-->
+<div class="greyBg header-con col-lg-12 col-md-12 col-sm-12 col-xs-12" id="headerCon">
+  <div class="container">
+    <div class="row">
+      <aside class="header col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="logo pull-left"><a href="index.html"><img src="images/logo-wide.png" alt="Wide SMCI Logo" /></a></div>
+		<div class="clearfix showmb"></div>
+        <nav class="navbar navbar-default pull-right">
+          <div class="container-fluid">
+            <div class="row"> 
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                <!--navbar-header--> 
+              </div>
+              <!-- Collect the nav links, forms, and other content for toggling -->
+			  <div class="clearfix showmb"></div>
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="row">
+                  <ul id="nav-list" class="nav navbar-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <!--<li class="nav-cta"><a href="login/login_p.aspx">Log In</a></li>-->
+                    <li class="nav-cta"><a href="login.aspx">Log In</a></li>
+                  </ul>
+                  <!--row--> 
+                </div>
+                <!--collapse--> 
+              </div>
+              <!--row--> 
+            </div>
+            <!--container-fluid--> 
+          </div>
+          <!--navbar--> 
+        </nav>
+        <!--header--> 
+      </aside>
+      <!--row--> 
+    </div>
+    <!--container--> 
+  </div>
+  <!--greyBg--> 
+</div>
+
+<script>
+$(function(){
+    var current = location.pathname;
+    $('#nav-list li a').each(function(){
+        var $this = $(this);
+        // if the current path is like this link, make it active
+        if($this.attr('href').indexOf(current) !== -1){
+            $this.addClass('active');
+        }
+    })
+})
+</script>

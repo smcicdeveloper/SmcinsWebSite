@@ -1,0 +1,35 @@
+﻿<%@ Master Language="VB" CodeFile="smcins_register.master.vb" Inherits="smcins_register" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <link href="CSS/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="masterbox">
+   <div id="banner">
+	    <a href="../default.aspx">
+	    <img alt="SMC Banner" width="994" height="130" src="../CSS/Images/top-banner-m.png"/></a>
+   </div>
+<div id="top_bar">
+</div>
+<div id="main_content">
+<%--<div class="div_left"></div>--%>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+
+</div>
+      <div id="footer">
+        <h5>Copyright&#169; 2017 Southern Mutual Church Insurance</h5>
+        <h5>P.O. Box 9346 - 201 Greenlawn Drive - Columbia, SC 29290</h5>
+      </div>
+      <div id="site_map">
+      
+      </div>
+    </div>
+    </form>
+</body>
+</html>

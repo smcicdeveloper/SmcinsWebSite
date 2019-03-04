@@ -1,0 +1,28 @@
+
+
+{ "data": {
+    "agents": {
+
+        "Georgia":[
+            {"county":"All", "name":"Stephen Floyd", "email":"sfloyd@smcins.com", "phone": "478-960-1026", "photo": "images/agents/stephen-floyd.jpg", "address": "", "city": "", "zip": "", "agency": ""}
+        ],
+        "Kentucky":[
+            {"county":"All", "name":"Terry Davis", "email":"tdavis@smcins.com", "phone": "270-365-3051", "photo": "images/agents/terry-davis.jpg", "address": "", "city": "", "zip": "", "agency": ""}
+        ],
+        "North Carolina": [
+            {"county":"All", "name":"Jim Francis", "email":"jfrancis@smcins.com", "phone": "828-507-3328", "photo": "images/agents/jim-francis.jpg", "address": "", "city": "", "zip": "", "agency": ""}
+        ],
+        "South Carolina": [
+            {"county":"All", "name":"David Wiess", "email":"info@smcins.com", "phone": "800-922-5332", "photo": "images/agents/david-wiess.jpg", "address": "201 Greenlawn Drive", "city": "Columbia", "zip": "29290", "agency": "Southern Mutual Church Insurance"},
+            {"county":"All", "name":"Jim Ellis", "email":"info@smcins.com", "phone": "800-922-5332", "photo": "images/agents/jim-ellis.jpg", "address": "201 Greenlawn Drive", "city": "Columbia", "zip": "29290", "agency": "Southern Mutual Church Insurance"}
+        ],
+        "Tennessee": [
+            {"county":"All", "name":"Matt Hollifield", "email":"mhollifield@smcins.com", "phone": "865-310-3458", "photo": "images/agents/matt-hollifield.jpg",  "address": "", "city": "", "zip": "", "agency": ""}
+        ],
+        "Virgina": [
+            {"county":"All", "name":"Jim Ferguson", "email":"jferguson@smcins.com", "phone": "123-123-1234", "photo": "images/agents/jim-ferguson.jpg", "address": "", "city": "", "zip": "", "agency": ""}
+        ]
+
+    }
+}
+}

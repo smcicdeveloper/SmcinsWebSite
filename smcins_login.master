@@ -1,0 +1,43 @@
+﻿<%@ Master Language="VB" CodeFile="smcins_login.master.vb" Inherits="smcins_login" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <link href="CSS/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="masterbox">
+    <div id="banner">
+	<a href="../default.aspx">
+	<img alt="SMC Banner" width="994" height="130" src="../CSS/Images/top-banner-m.png"/></a>
+</div>
+<div id="top_bar">
+</div>
+<div id="main_content">
+<div id="login_style_box">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">       
+        </asp:ContentPlaceHolder>
+</div>
+</div>
+        <div id="footer">
+        <h5>Copyright&#169; 2018 Southern Mutual Church Insurance Company</h5>
+        <h5>P.O. Box 9346 - 201 Greenlawn Drive - Columbia, SC 29290-0346</h5>
+        <h5>(803)776-9365 - Toll Free (800)922-5332 - Fax (803)776-4260</h5>
+        </div>
+
+    </div>
+
+<%--        <div id="bottom_links">
+        <ul>
+             <li><a href="About/contact_us.aspx">Contact Us</a></li>
+             <li><a href="SiteConditions/privacy_policy.aspx">Privacy Policy</a></li>
+             <li><a href="SiteConditions/terms_of_use.aspx">Terms of Use</a></li>
+        </ul>
+        </div>--%>
+
+    </form>
+</body>
+</html>

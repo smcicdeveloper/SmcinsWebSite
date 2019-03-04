@@ -1,0 +1,337 @@
+﻿<%@ Master Language="VB" CodeFile="smcins_home.master.vb" Inherits="smcins_home" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <link href="CSS/anythingslider.css" rel="stylesheet" type="text/css" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Southern Mutual Church Insurance Company</title>
+
+<style id="antiClickjack">body{display:none !important;}</style>
+
+<link href="CSS/main.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+          /* New in version 1.7+ 
+         /* images with caption */ 
+         #slider img { 
+          width: 100%; 
+          height: auto; 
+         } 
+         /* position the panels so the captions appear correctly */ 
+         #slider .panel { position: relative; } 
+         /* captions */ 
+         #slider .caption-top, #slider .caption-right, 
+         #slider .caption-bottom, #slider .caption-left, #slider.caption-special { 
+          background: #fff; 
+          color: #003a5e; 
+          padding: 10px; 
+          margin: 0; 
+          position: relative; 
+          opacity: .8; 
+          filter: alpha(opacity=80); 
+         } 
+         /* Top caption - padding is included in the width (480px here, 500px in the script), same for height */ 
+         #slider .caption-top { 
+          left: 0; 
+          top: 0; 
+          width: 700px; 
+          height: 30px; 
+         } 
+         /* Right caption - padding is included in the width (130px here, 150px in the script), same for height */ 
+         #slider .caption-right { 
+          right: 0; 
+          bottom: 0; 
+          width: 250px; 
+          height: 275px; 
+          line-height:160%;
+          font-size:17px; 
+          padding:10px;
+         } 
+         /* Bottom caption - padding is included in the width (480px here, 500px in the script), same for height */ 
+         #slider .caption-bottom { 
+          left: 0; 
+          bottom: 0; 
+          width: 700px; 
+          height: 30px; 
+         } 
+         /* Left caption - padding is included in the width (130px here, 150px in the script), same for height */ 
+         #slider .caption-left { 
+          left: 0; 
+          bottom: 0; 
+          width: 130px; 
+          height: 180px; 
+         } 
+         #slider .caption-special {
+          right: 0; 
+          bottom: 0; 
+          width: 397px; 
+          height: 275px; 
+          line-height:160%;
+          font-size:17px; 
+          padding:10px;
+          background:White;
+          color: #003a5e;
+         }
+         /* Caption close button */ 
+         .caption-top .close, .caption-right .close, 
+         .caption-bottom .close, .caption-left .close, .caption-special .close { 
+          font-family: Calibri, sans-serif;
+          cursor: pointer; 
+          float: right; 
+          display: inline-block; 
+          color:White;
+         }
+    </style>
+     <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+     <script type="text/jscript" src="js/jquery.anythingslider.min.js"></script>
+     <script type="text/javascript" src="js/nav1.1.min.js"></script>
+     <script type="text/jscript">
+         var preloadImages = ['CSS/Images/3DP-Login-button-hover.png',
+                              'CSS/Images/3DA-Login-button-hover.png',
+                              'CSS/Images/3DE-Login-button-hover.png'];
+         var imgs = [];
+         for (var i = 0; i < preloadImages.length; i++) {
+             imgs[i] = new Image();
+             imgs[i].src = preloadImages[i];
+         }
+
+             $(document).ready(function () {
+                 var newPolicyholder = new Image();
+                 var newAgent = new Image();
+                 var newEmployee = new Image();
+
+                 newPolicyholder.src = 'CSS/Images/3DP-Login-button-hover.png';
+                 newAgent.src = 'CSS/Images/3DA-Login-button-hover.png';
+                 newEmployee.src = 'CSS/Images/3DE-Login-button-hover.png';
+
+                 var oldPolicyholder = $('#button1').attr('src');
+                 var oldAgent = $('#button2').attr('src');
+                 var oldEmployee = $('#button3').attr('src');
+
+                 $('#button1').hover(
+             function () {
+                 $(this).attr('src', newPolicyholder.src);
+             },
+             function () {
+                 $(this).attr('src', oldPolicyholder);
+             });  //end hover
+
+                 $('#button2').hover(
+             function () {
+                 $(this).attr('src', newAgent.src);
+             },
+             function () {
+                 $(this).attr('src', oldAgent);
+             });  //end hover
+
+                 $('#button3').hover(
+             function () {
+                 $(this).attr('src', newEmployee.src);
+             },
+             function () {
+                 $(this).attr('src', oldEmployee);
+             });  //end hover
+
+             });      //end ready
+           
+
+
+         $(document).ready(function () {
+             $("#navigation").navPlugin({
+                 'itemWidth': 250,
+                 'itemHeight': 30,
+                 'navEffect': "slide",
+                 'speed': 400
+             });
+         }); // end ready
+
+         $(document).ready(function () {
+             $('#slider').anythingSlider({
+                 buildArrows: false,
+                 buildStartStop: false,
+                 autoPlay: true,
+                 delay: 5000,
+                 inFx: {
+                     '.caption-right': { bottom: 0, opacity: 0.8, duration: 400 }
+                 },
+                 outFx: {
+                     '.caption-right': { bottom: 0, opacity: 0.8, duration: 400 }
+                 }
+             })
+
+                    .find('div[class*=caption]')
+                    .css({ position: 'absolute'})
+                    .prepend('<span class="close">x</span><br/>')
+                    .find('.close').click(function () {
+                        var cap = $(this).parent(),
+                     ani = { bottom: -50 }; // bottom 
+                        if (cap.is('.caption-top')) { ani = { top: -50 }; }
+                        if (cap.is('.caption-left')) { ani = { left: -150 }; }
+                        if (cap.is('.caption-right')) { ani = { right: -250 }; }
+                        cap.animate(ani, 400, function () { cap.hide(); });
+                    });
+                });
+
+
+                if (self === top) {
+                    var antiClickjack = document.getElementById("antiClickjack");
+                    antiClickjack.parentNode.removeChild(antiClickjack);
+                } else {
+                    top.location = self.location;
+                }
+
+     </script>
+</head>
+
+<body>
+
+<form id="form1" runat="server">
+<div id="masterbox">
+
+<div id="banner">
+	<a href="default.aspx">
+	<img alt="SMC Banner" width="992" height="130" src="CSS/Images/top-banner-m.png"/></a>
+</div>
+<div id="top_nav">
+        <a href="default.aspx">Home</a>      
+		<a href="Claims/claims_info.aspx">Report a Claim</a>
+		<a href="FindAgent/find_agent.aspx">Find an Agent</a>
+		<a href="OnlinePaymentHelp/online_payment_help.aspx" class="online_payment">Online Payment</a>
+</div>
+
+  <div id="main_content">	
+	<div id="left_nav">
+      <div class="portal_nav_1">
+      <ul id="navigation">
+       <li><a href="#">About Us</a>
+          <ul>
+             <li><a href="About/presidents_message.aspx">President's Message</a></li>
+             <li><a href="About/history.aspx">History</a></li>
+             <li><a href="About/board_of_directors.aspx">Board of Directors</a></li>
+             <li><a href="About/contact_us.aspx">Contact Us</a></li>
+             <li><a href="About/employment.aspx">Employment Opportunities</a></li>
+          </ul>
+       </li>
+       <li><a href="#">Products/Services</a>
+          <ul>
+             <li><a href="ProductServices/property_liability.aspx">Property and Liability</a></li>
+             <li><a href="ProductServices/business_automobile.aspx">Business Automobile</a></li>
+             <li><a href="ProductServices/workers_compensation.aspx">Workers Compensation</a></li>
+             <li><a href="ProductServices/umbrella_liability.aspx">Umbrella Liability</a></li>
+          </ul>
+       </li>
+       <li><a href="#">Resources</a>
+          <ul>
+             <li><a href="churchsecurity/churchsecurity.aspx">Church Security</a></li>
+             <li><a href="Resources/child_youth_protection.aspx">Child and Youth Protection</a></li>
+             <li><a href="Resources/missionary_travel_insurance.aspx">Missionary Travel Insurance</a></li>
+             <li><a href="Resources/helpful_links.aspx">Helpful Links</a></li>
+             <li><a href="Resources/motor_vehicle.aspx">Motor Vehicle Reports</a></li>
+             <li><a href="Resources/gatekeeper.aspx">Gatekeeper Newsletter</a></li>
+          </ul>
+       </li>
+       <li><a href="FAQs/faq_policyholder.aspx">Frequently Asked Questions</a></li>
+    </ul>
+        <br />
+        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" 
+             ShowStartingNode="False" />
+	</div>
+    <br />
+    <div class="portal_nav_2">
+        <asp:ImageButton ID="button1" runat="server" 
+        ImageUrl="~/CSS/Images/3DP-Login-button.png" 
+        PostBackUrl="~/login/login_p.aspx" CssClass="imgLoginButtons" />
+        <asp:ImageButton ID="button2" runat="server" 
+        ImageUrl="~/CSS/Images/3DA-Login-button.png" 
+        PostBackUrl="~/login/login_a.aspx" CssClass="imgLoginButtons" />
+        <asp:ImageButton ID="button3" runat="server" 
+        ImageUrl="~/CSS/Images/3DE-Login-button.png" 
+        PostBackUrl="~/login/login_e.aspx" />
+        <br />
+    </div>
+    <div class="portal_nav_3">
+      <h3>Register</h3>
+      <p>If you don't have an account yet, just click the link below to get started.</p>
+      <a href="login/register.aspx">Create Account</a>
+    </div>
+    <div class="portal_nav_4">
+     <ul>
+       <li><a href="http://www3.ambest.com/ratings/profile.asp?ambnum=1847&RatingCode=20811847" target="_blank"><img src="CSS/Icons/AMBest-4-12.png" alt="This company was issued a secure rating by the A.M. Best Company, click for additional details" /></a></li>
+       <li><a href="http://www.demotech.com/search_results_fsr.aspx?id=26468&t=2&AspxAutoDetectCookieSupport=1" target="_blank"><img src="CSS/Icons/DemotechUnsurpassed.png" alt="Demotech" /></a></li>
+     </ul>
+    </div>
+
+    </div>
+
+<div id="page_content">
+<div id="top_content">
+	<asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+
+	</asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+
+    </asp:ContentPlaceHolder>
+ </div>
+ <div id="bottom_content">
+ <asp:ContentPlaceHolder runat="server" id="ContentPlaceHolder2">
+ <h1>content 2</h1>
+ </asp:ContentPlaceHolder>
+ </div>
+
+
+ </div>
+ </div>
+ 
+
+<div id="site_map">
+ <ul>
+ <li><h3>About Us</h3></li>
+ <li><a href="About/presidents_message.aspx">President's Message</a></li>
+ <li><a href="About/history.aspx">History</a></li>
+ <li><a href="About/board_of_directors.aspx">Board of Directors</a></li>
+ <li><a href="About/contact_us.aspx">Contact Us</a></li>
+ <li><a href="About/employment.aspx">Employment Opportunities</a></li>
+ </ul>     
+ <ul>
+  <li><h3>Insurance</h3></li>
+  <li><a href="ProductServices/property_liability.aspx">Property and Liability</a></li>
+  <li><a href="ProductServices/business_automobile.aspx">Business Automobile</a></li>
+  <li><a href="ProductServices/workers_compensation.aspx">Workers Compensation</a></li>
+  <li><a href="ProductServices/umbrella_liability.aspx">Umbrella Liability</a></li>
+ </ul>
+ <ul>
+    <li><h3>Resources</h3></li>
+    <li><a href="churchsecurity/churchsecurity.aspx">Church Security</a></li>
+    <li><a href="Resources/child_youth_protection.aspx">Child/Youth Protection Program</a></li>
+    <li><a href="Resources/missionary_travel_insurance.aspx">Missionary Travel Insurance</a></li>
+    <li><a href="Resources/helpful_links.aspx">Helpful Links</a></li>
+    <li><a href="Resources/motor_vehicle.aspx">Motor Vehicle Submissions</a></li>
+    <li><a href="Resources/gatekeeper.aspx">Gatekeeper Newsletter</a></li>
+ </ul>
+ <ul>
+   <li><h3>General</h3></li>
+   <%--<li><a href="#">Home</a></li>
+   <li><a href="SiteConditions/privacy_policy.aspx">Privacy Policy</a></li>
+   <li><a href="SiteConditions/terms_of_use.aspx">Terms of Use</a></li>--%>
+   <li><a href="FAQs/faq_policyholder.aspx">Policyholders (FAQs)</a></li>
+   <li><a href="#">Agents (FAQs)</a></li>
+ </ul>
+ <ul>
+   <li><h3>User Tools</h3></li>
+   <li><a href="FindAgent/find_agent.aspx">Find an Agent</a></li>
+   <li><a href="Claims/claims_info.aspx">Report a Claim</a></li>
+   <li><a href="https://secure.usaepay.com/interface/epayform/eNh185f00XMRltJM3TC36BbuI918ZgzS/" target="_blank">Online Payment</a></li>
+ </ul>
+</div>
+<div id="footer">
+<h5>Copyright&#169; 2018 Southern Mutual Church Insurance Company</h5>
+<h5>P.O. Box 9346 - 201 Greenlawn Drive - Columbia, SC 29290-0346</h5>
+<h5>(803)776-9365 - Toll Free (800)922-5332 - Fax (803)776-4260</h5>
+</div>
+</div> <%--End of Masterbox--%>
+
+</form>
+
+</body>
+</html>

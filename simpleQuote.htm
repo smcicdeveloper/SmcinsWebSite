@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Southern Mutual Church Insurance Company</title>
+<link rel="icon" href="images/favicon.png" type="image/png">
+<link rel="stylesheet" href="css/all-stylesheets.css" type="text/css" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<link rel="stylesheet" href="https://v4-alpha.getbootstrap.com/components/modal/" />
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<!-- Fav and touch icons -->
+<script type="text/javascript">
+    $('#MyModal').on('shown.bs.modal', function () {
+        $('#myInput').focus()
+    })
+
+//    $('#exampleModal').modal(options)
+
+</script>
+</head>
+<body>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#MyModal">
+  Launch demo modal
+</button>
+
+
+<!--Modal-->
+<div class="modal fade" id="MyModal">
+ <div class="modal-dialog" role="document">
+   <div class="modal-content">
+     <div class="modal-header">
+       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+         <span aria-hidden="true">&times;</span>
+       </button>
+       <h4 class="modal-title">REQUEST A QUOTE</h4>
+     </div>
+     <div class="modal-body">
+
+     <form action="">
+          <div class="form-group">
+            <label for="church-name" class="form-control-label">Church Name:</label>
+            <input type="text" class="form-control" id="church-name" maxlength="70" size="70" />
+          </div>  
+          <div class="form-group">
+            <label for="church-location" class="form-control-label">Church Location:</label>
+            <textarea class="form-control" id="church-location" rows="2" cols="1" maxlength="75"></textarea>
+          </div>  
+          <div class="form-group">
+            <label for="first-name" class="form-control-label">First Name:</label>
+            <input type="text" class="form-control" id="first-name" maxlength="25" size="25" />
+          </div> 
+           <div class="form-group">
+            <label for="last-name" class="form-control-label">Last Name:</label>
+            <input type="text" class="form-control" id="last-name" maxlength="25" size="25" />
+          </div> 
+           <div class="form-group">
+            <label for="contact-number" class="form-control-label">Contact Number:</label>
+            <input type="text" class="form-control" id="contact-number" maxlength="12" size="12" />
+          </div>
+          <div class="form-group">
+            <label for="email-address" class="form-control-label">Email Address:</label>
+            <input type="text" class="form-control" id="email-address" maxlength="25" size="25" />
+          </div>                                                  
+     </form>
+
+     </div>
+     <div class="modal-footer">
+       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+       <button type="button" class="btn btn-primary">Send</button>
+     </div>
+   </div> <!--/.modal-content-->
+ </div>   <!--/.modal-dialog-->
+</div>   <!--/.modal-->
+   
+
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/jquery-1.12.3.min.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/bootstrap/bootstrap.js"></script> 
+<!-- Counter --> 
+<script src="js/counter/counter.js"></script> 
+<!-- Owl Carousel --> 
+<script src="owl-carousel/js/owl.carousel.js"></script> 
+ <!-- LAZY EFFECTS Scripts --> 
+<script type="text/javascript" src="js/jquery.unveilEffects.js"></script>
+ <!-- Custom Scripts --> 
+<script src="js/custom.js"></script>
+
+</body>
+</html>

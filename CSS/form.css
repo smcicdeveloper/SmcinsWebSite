@@ -1,0 +1,153 @@
+﻿/* Reset tags
+   Reset agent stylesheet
+-----------------------------------------------------------*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Master page styling 'type selectors'
+-----------------------------------------------------------*/
+body {
+    background-color:#aaaaaa;
+    font-size: .80em;
+    font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+    margin: 4px auto;
+    max-width:960px;
+}
+
+/* Master page layout main (with mix ID and Class selectors)
+-----------------------------------------------------------*/
+#main {
+    background-color:#ffffff;
+    -moz-box-shadow:2px 2px 5px #000;
+    -webkit-box-shadow:2px 2px 5px #000;
+    box-shadow: 2px 2px 5px #000;
+}
+
+#header #nav {
+   background-color:#edeeef;
+    padding:2%; 
+}
+
+#header #nav ul {
+    position:relative;
+    left:93%;
+}
+
+#header #nav ol {
+    position:relative;
+    text-align:center;
+}
+
+#header #nav ol h3 {
+    font-family:Century Schoolbook, Arial, Sans-Serif;
+    font-size:20px;
+    line-height:150%;
+    letter-spacing:3%;
+}
+
+#header #nav > ul > li {
+    display:inline-block;
+    padding:5px 0px;   
+}
+
+#header #nav ul li a {
+    color:#000;
+    display:inline-block;
+    margin:5px 25px;
+    text-decoration:none;    
+}
+
+#header #nav ul li a:hover {
+    color:#0073bb;
+}
+
+#page {
+    padding:6%;
+    width:86%;
+}
+
+#page p {
+    margin-top:5px;
+    margin-bottom:5px;
+    padding:6px;
+    font-family: Century Schoolbook, Arial, Sans-Serif;
+    font-size:18px;
+    line-height:140%;
+    letter-spacing:3%;
+}
+
+#page p i {
+    font-family:Century Schoolbook, Arial, Sans-Serif;
+    font-size:18px;
+    font-style:italic;
+    
+}
+
+#footer {
+    padding:4%;
+    background-color:#ffffff;
+    -moz-box-shadow:2px 2px 5px #000;
+    -webkit-box-shadow:2px 2px 5px #000;
+    box-shadow: 2px 2px 5px #000;
+}
+
+#footer ol {
+    position:relative;
+    text-align:center;
+}
+
+#footer ol li {
+    font-family:Century Schoolbook, Arial, Sans-Serif;
+    font-size:12px;
+    line-height:130%;
+    letter-spacing:3%;
+    color:gray;
+}

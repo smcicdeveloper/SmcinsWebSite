@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SummaryDataSet" targetNamespace="http://tempuri.org/SummaryDataSet.xsd" xmlns:mstns="http://tempuri.org/SummaryDataSet.xsd" xmlns="http://tempuri.org/SummaryDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection ConnectionStringObject="Data Source=SQL01;Initial Catalog=POINT;Persist Security Info=True;User ID=webusr;Password=smcw3bu$r" IsAppSettingsProperty="false" Modifier="Assembly" Name="sql01.POINT.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vw_agysummaryTableAdapter" GeneratorDataComponentClassName="vw_agysummaryTableAdapter" Name="vw_agysummary" UserDataComponentName="vw_agysummaryTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="sql01.POINT.dbo" DbObjectName="POINT.dbo.vw_agysummary" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT agent, mtd_prem, ytd_prem, earned_prem, inforce_prem, curr_resv, prior_resv, paid_ytd, lae_curr_resv, lae_prior_resv, lae_paid_ytd, (paid_ytd + curr_resv + lae_paid_ytd + lae_curr_resv - prior_resv - lae_prior_resv) As total_Incurred FROM vw_agysummary WHERE agent = '0005010'</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="agent" DataSetColumn="agent" />
+              <Mapping SourceColumn="mtd_prem" DataSetColumn="mtd_prem" />
+              <Mapping SourceColumn="ytd_prem" DataSetColumn="ytd_prem" />
+              <Mapping SourceColumn="earned_prem" DataSetColumn="earned_prem" />
+              <Mapping SourceColumn="inforce_prem" DataSetColumn="inforce_prem" />
+              <Mapping SourceColumn="curr_resv" DataSetColumn="curr_resv" />
+              <Mapping SourceColumn="prior_resv" DataSetColumn="prior_resv" />
+              <Mapping SourceColumn="paid_ytd" DataSetColumn="paid_ytd" />
+              <Mapping SourceColumn="lae_curr_resv" DataSetColumn="lae_curr_resv" />
+              <Mapping SourceColumn="lae_prior_resv" DataSetColumn="lae_prior_resv" />
+              <Mapping SourceColumn="lae_paid_ytd" DataSetColumn="lae_paid_ytd" />
+              <Mapping SourceColumn="total_Incurred" DataSetColumn="total_Incurred" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="SummaryDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="SummaryDataSet" msprop:Generator_UserDSName="SummaryDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vw_agysummary" msprop:Generator_TableClassName="vw_agysummaryDataTable" msprop:Generator_TableVarName="tablevw_agysummary" msprop:Generator_RowChangedName="vw_agysummaryRowChanged" msprop:Generator_TablePropName="vw_agysummary" msprop:Generator_RowDeletingName="vw_agysummaryRowDeleting" msprop:Generator_RowChangingName="vw_agysummaryRowChanging" msprop:Generator_RowEvHandlerName="vw_agysummaryRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_agysummaryRowDeleted" msprop:Generator_RowClassName="vw_agysummaryRow" msprop:Generator_UserTableName="vw_agysummary" msprop:Generator_RowEvArgName="vw_agysummaryRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="agent" msprop:Generator_ColumnVarNameInTable="columnagent" msprop:Generator_ColumnPropNameInRow="agent" msprop:Generator_ColumnPropNameInTable="agentColumn" msprop:Generator_UserColumnName="agent">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="mtd_prem" msprop:Generator_ColumnVarNameInTable="columnmtd_prem" msprop:Generator_ColumnPropNameInRow="mtd_prem" msprop:Generator_ColumnPropNameInTable="mtd_premColumn" msprop:Generator_UserColumnName="mtd_prem" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ytd_prem" msprop:Generator_ColumnVarNameInTable="columnytd_prem" msprop:Generator_ColumnPropNameInRow="ytd_prem" msprop:Generator_ColumnPropNameInTable="ytd_premColumn" msprop:Generator_UserColumnName="ytd_prem" type="xs:decimal" minOccurs="0" />
+              <xs:element name="earned_prem" msprop:Generator_ColumnVarNameInTable="columnearned_prem" msprop:Generator_ColumnPropNameInRow="earned_prem" msprop:Generator_ColumnPropNameInTable="earned_premColumn" msprop:Generator_UserColumnName="earned_prem" type="xs:decimal" minOccurs="0" />
+              <xs:element name="inforce_prem" msprop:Generator_ColumnVarNameInTable="columninforce_prem" msprop:Generator_ColumnPropNameInRow="inforce_prem" msprop:Generator_ColumnPropNameInTable="inforce_premColumn" msprop:Generator_UserColumnName="inforce_prem" type="xs:decimal" minOccurs="0" />
+              <xs:element name="curr_resv" msprop:Generator_ColumnVarNameInTable="columncurr_resv" msprop:Generator_ColumnPropNameInRow="curr_resv" msprop:Generator_ColumnPropNameInTable="curr_resvColumn" msprop:Generator_UserColumnName="curr_resv" type="xs:decimal" minOccurs="0" />
+              <xs:element name="prior_resv" msprop:Generator_ColumnVarNameInTable="columnprior_resv" msprop:Generator_ColumnPropNameInRow="prior_resv" msprop:Generator_ColumnPropNameInTable="prior_resvColumn" msprop:Generator_UserColumnName="prior_resv" type="xs:decimal" minOccurs="0" />
+              <xs:element name="paid_ytd" msprop:Generator_ColumnVarNameInTable="columnpaid_ytd" msprop:Generator_ColumnPropNameInRow="paid_ytd" msprop:Generator_ColumnPropNameInTable="paid_ytdColumn" msprop:Generator_UserColumnName="paid_ytd" type="xs:decimal" minOccurs="0" />
+              <xs:element name="lae_curr_resv" msprop:Generator_ColumnVarNameInTable="columnlae_curr_resv" msprop:Generator_ColumnPropNameInRow="lae_curr_resv" msprop:Generator_ColumnPropNameInTable="lae_curr_resvColumn" msprop:Generator_UserColumnName="lae_curr_resv" type="xs:decimal" minOccurs="0" />
+              <xs:element name="lae_prior_resv" msprop:Generator_ColumnVarNameInTable="columnlae_prior_resv" msprop:Generator_ColumnPropNameInRow="lae_prior_resv" msprop:Generator_ColumnPropNameInTable="lae_prior_resvColumn" msprop:Generator_UserColumnName="lae_prior_resv" type="xs:decimal" minOccurs="0" />
+              <xs:element name="lae_paid_ytd" msprop:Generator_ColumnVarNameInTable="columnlae_paid_ytd" msprop:Generator_ColumnPropNameInRow="lae_paid_ytd" msprop:Generator_ColumnPropNameInTable="lae_paid_ytdColumn" msprop:Generator_UserColumnName="lae_paid_ytd" type="xs:decimal" minOccurs="0" />
+              <xs:element name="total_Incurred" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntotal_Incurred" msprop:Generator_ColumnPropNameInRow="total_Incurred" msprop:Generator_ColumnPropNameInTable="total_IncurredColumn" msprop:Generator_UserColumnName="total_Incurred" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

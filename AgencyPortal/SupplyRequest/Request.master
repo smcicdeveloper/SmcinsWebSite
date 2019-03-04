@@ -1,0 +1,374 @@
+﻿<%@ Master Language="VB" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script runat="server">
+
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+
+<style type="text/css">
+*{
+    padding:0;
+    margin:0;
+    }
+    
+.addressLabel {
+    float:left;
+    width:100px;
+    padding:5px;
+    text-align:right;
+}
+          
+.addressFields {
+    float:left;
+    /*padding:5px;*/
+}
+
+.addressField {
+    padding-right:2px;
+    padding-bottom:3px;
+}   
+          
+.addressField ul li {
+    list-style-type:none;
+    float:left;
+    padding-left:3px;
+}     
+           
+body {
+    font-family: Arial, Helvetica, Sans-Serif;
+    font-size: 85%;
+    margin: 0;
+    padding: 0;
+    background-color: #d3d3d3;
+}
+
+.buttons {
+    background-color:#A7A9AC;
+    border:none;
+    border-radius:4px;
+    box-shadow:2px 2px 2px #333;
+    color:#fff;
+    margin:5px;
+    padding:7px;
+    /*text-shadow:1px 1px 0px #CCC;*/ 
+    text-decoration:none;
+}
+
+.cart ul {
+    border: 0px solid #d4d4d4;       
+    float:left;
+    /*width:40%;
+    list-style:none;*/ 
+}
+            
+.cart ul li, ol li {
+    margin: 50px 0; 
+    padding: 4px 12px 4px 4px;  
+}
+
+.cartbuttons {
+    float: right;
+    width: 140px;
+    margin-right: 295px;
+    border:solid 0px black;
+}
+        
+.cartbuttons ul {
+    list-style:none;
+    margin: 50% 0; 
+}  
+      
+.cartbuttons ul li {
+    padding:4px;
+}
+
+.clear {
+    clear:both;
+}  
+        
+.content {
+    background-color:White;
+    width:700px;
+    margin:auto;
+    padding:20px;                 
+}
+
+.command a {
+    background-color:#A7A9AC;
+    border:none;
+    border-radius:4px;
+    /*box-shadow:2px 2px 2px #333;*/
+    color:#FFFFFF;
+    margin:1px;
+    padding:7px;
+    text-decoration:none;   
+}
+
+.command a:hover {
+   color:#001623;
+ }
+               
+.div_left {
+    float: left;
+    margin-right:20px;
+    width:auto;
+    height:105px;
+    border:0px solid black;
+    padding-left:5px;
+    vertical-align:middle;
+}
+
+.div_right {
+    float: right;
+    margin: 0px;
+    width:130px;
+    height:110px;
+    border:0px solid black;
+    padding:4px;
+    background-color:#ececec;
+}
+
+.div_right li {
+    border:0px solid black;
+    width:70px;
+}
+        
+.div_right ul {
+    list-style:none;
+    padding:9px;
+    margin-top:4px;
+}  
+        
+.div_right ul li {
+    float:left;
+    margin-right:1px;
+} 
+
+.dropDownList {
+    padding:2px;
+    margin-top:4px;
+    border-radius: 5px;
+    border: 1px solid #d4d4d4;
+}
+                     
+fieldset {
+    background-color:#e5e6e6;
+    border: 1px solid #d4d4d4;
+    border-radius:2px;
+    margin-bottom:12px;
+    overflow: hidden;
+    padding: 25px 10px;
+}
+      
+fieldset legend  {
+ font-weight:bold;
+ padding-top:25px;
+}
+
+#footer {
+ height:110px;
+ margin: 0 auto;
+ padding-left:7px;
+ background-color: White;  
+}
+
+/*#footer ul {
+    list-style:none;
+}*/
+
+#footer ul li, ol li {
+ /*float:left;*/
+ padding: 0px 5px 0px 0px;
+ margin: 5% 0;
+}
+
+.grid td {
+   padding:3px; 
+}
+
+/*.grid th {
+   padding:10px; 
+}*/
+
+h2 {
+  margin-left: 4%;
+  padding:.3em 1em; 
+  /*position:relative;
+  top:3.5%;*/
+}
+
+h5 {
+ margin: 0;
+ padding:.3em 0;  
+}
+
+#header {
+ float:left;
+ margin:10px 0 0 0;
+ width: 100%;
+ height: 100px;
+ z-index: 2;
+} 
+            
+label {
+    display: inline-block;
+    padding: 3px 6px;
+    margin-right: 15px;
+    font-size:13px;
+    font-weight:bold; 
+} 
+
+/*.landscape ul {border:1px solid black;}*/
+
+.landscape ul li, ol li {
+ float:left;
+ padding: 25px 12px 4px 4px;
+ margin: 0.5em 0;
+}
+                 
+.listBox1 {
+    padding:6px;
+    margin-top:4px;
+    width:275px;
+    height:240px;
+    border-radius: 5px;
+    border: 1px solid #d4d4d4;
+} 
+
+.listBox2 {    
+    padding:4px; 
+    margin-top:5px;
+    border: 0px solid white; 
+} 
+          
+#lnkButtonBox {
+    background-color:#f2f2f2; 
+    border-top:1px solid #bfbfbf; 
+}
+          
+.lnkButtons {
+    display:inline;
+    font-size:11px;                  
+}   
+           
+.lnkButtons ul {
+    display:inline-block;
+    list-style:none;           
+}  
+           
+.lnkButtons li {
+    display:inline-block;
+    padding-right:5px;
+    padding-top:10px;
+    padding-bottom:10px;      
+} 
+           
+.lnkButtons li a {
+    color:#0059b3;
+}    
+          
+#page {
+    width: 800px;
+    margin: 0 auto;
+    background-color: White;            
+}
+
+.panel {
+    margin-top:0px;
+}
+
+.portrait ul li, ol li {
+  margin: .2em 0; 
+  padding: 0px 2px;  
+} 
+                      
+.order ul {
+    border: 0px solid #d4d4d4;       
+}
+            
+.order ul li, ol li {
+    margin: 50px 0; 
+    padding: 4px 12px 4px 4px;  
+}
+
+#main {
+    padding: 10px;
+    margin-top: 0;
+}   
+          
+#message {
+    color: Green;
+    margin-top:15px;
+}  
+
+.myListbox  {
+    height:325px;padding:5px;
+}
+
+.myOrders {
+    background-color:transparent;
+    border:none;
+}    
+
+.radioControl input[type=radio] + label {
+    font-weight:normal;
+    margin-top:15px;
+}  
+
+.radiolist input[type=radio] + label {
+    font-weight:normal;
+    margin-top:4px;
+}         
+         
+#shopbuttons {
+    clear: right;
+    margin-top: 25px;
+} 
+
+#sidebar {
+    float:left;
+    margin:10px 5px 5px 6px;
+    background-color:White;
+    width:38%;
+    height:825px;
+}
+
+.textbox {
+    padding:4px;
+    margin-top:4px;
+    border-radius: 5px;
+    border: 1px solid #d4d4d4;
+}
+
+ul {
+    list-style:none;
+}
+     
+             
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="page">
+    <div id="main">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    <div id="footer">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+   </div>
+    </form>
+</body>
+</html>
+
